@@ -1,0 +1,16 @@
+ts,market,source,title,url
+2026-06-01T13:36:40+00:00,PM_HURRICANE_FL_2026,demo_gdelt,storm weakens and landfall unlikely according to forecasters,https://example.com/demo-news
+2026-06-01T13:45:00+00:00,PM_HURRICANE_FL_2026,demo_gdelt,confirmed tropical system surge increases landfall probability,https://example.com/demo-news
+2026-06-01T13:56:40+00:00,PM_HURRICANE_FL_2026,demo_gdelt,storm weakens and landfall unlikely according to forecasters,https://example.com/demo-news
+2026-06-01T14:11:40+00:00,PM_HURRICANE_FL_2026,demo_gdelt,emergency officials discuss evacuation risk before hurricane season,https://example.com/demo-news
+2026-06-01T14:21:40+00:00,PM_HURRICANE_FL_2026,demo_gdelt,confirmed tropical system surge increases landfall probability,https://example.com/demo-news
+2026-06-01T13:36:40+00:00,KX_BIRDFLU_US_2026,demo_gdelt,confirmed outbreak in migratory birds raises surveillance concerns,https://example.com/demo-news
+2026-06-01T13:45:00+00:00,KX_BIRDFLU_US_2026,demo_gdelt,record bird migration anomaly escalates outbreak probability,https://example.com/demo-news
+2026-06-01T13:56:40+00:00,KX_BIRDFLU_US_2026,demo_gdelt,confirmed outbreak in migratory birds raises surveillance concerns,https://example.com/demo-news
+2026-06-01T14:11:40+00:00,KX_BIRDFLU_US_2026,demo_gdelt,avian flu reports contained after normal migration testing,https://example.com/demo-news
+2026-06-01T14:21:40+00:00,KX_BIRDFLU_US_2026,demo_gdelt,record bird migration anomaly escalates outbreak probability,https://example.com/demo-news
+2026-06-01T13:36:40+00:00,PM_HEATWAVE_EU_2026,demo_gdelt,record temperature outlook increases heatwave risk,https://example.com/demo-news
+2026-06-01T13:45:00+00:00,PM_HEATWAVE_EU_2026,demo_gdelt,emergency heat plans escalate after climate outlook update,https://example.com/demo-news
+2026-06-01T13:56:40+00:00,PM_HEATWAVE_EU_2026,demo_gdelt,record temperature outlook increases heatwave risk,https://example.com/demo-news
+2026-06-01T14:11:40+00:00,PM_HEATWAVE_EU_2026,demo_gdelt,record temperature outlook increases heatwave risk,https://example.com/demo-news
+2026-06-01T14:21:40+00:00,PM_HEATWAVE_EU_2026,demo_gdelt,record temperature outlook increases heatwave risk,https://example.com/demo-news
