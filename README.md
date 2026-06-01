@@ -14,16 +14,6 @@ It includes:
 - C++17 order book simulator/backtester with fills, inventory, fees, settlement, and PnL
 - Offline demo mode that runs without API keys or kdb+
 
-This project connects directly to prediction-market trading:
-
-- Binary-event fair value estimation
-- Order-book microstructure and spread-aware execution
-- Market-data ingestion from Polymarket/Kalshi-style APIs
-- News-driven Bayesian probability updates from GDELT
-- q/kdb+ time-series storage
-- C++ execution/backtest simulator
-
-Public-source notes: Polymarket documents public Gamma/Data APIs and public CLOB endpoints for orderbooks/prices, while authenticated endpoints are required for order management. Kalshi documents REST/WebSocket market data, including real-time order book changes. GDELT describes itself as a real-time open-data graph of global news media.
 
 ## Quick start: offline demo
 
