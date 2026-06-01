@@ -2,6 +2,10 @@
 
 A runnable prediction-market fair-value engine designed for a Prediction Markets Trader portfolio project.
 
+Real sources of alpha and advanced methods are hidden.
+
+The project is a project only and not a real-time trading system that is used on any financial markets. Do not utilize someone else's code for actual purposes, you are solely responsible for any of your actions and the profit and/or loss.
+
 It includes:
 
 - Python live/offline collectors for Polymarket, Kalshi-style orderbooks, and GDELT news
