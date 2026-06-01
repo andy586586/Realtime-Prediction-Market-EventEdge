@@ -1,4 +1,4 @@
-# EventEdge Realtime
+# Real-Time (Prediction Market) EventEdge
 
 A runnable prediction-market fair-value engine designed for a Prediction Markets Trader portfolio project.
 
