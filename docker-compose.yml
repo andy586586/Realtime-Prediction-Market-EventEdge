@@ -1,0 +1,13 @@
+services:
+  questdb:
+    image: questdb/questdb:latest
+    ports:
+      - "9000:9000"   # Web console, SQL HTTP API, and ILP/HTTP
+      - "8812:8812"   # PostgreSQL wire protocol
+      - "9009:9009"   # ILP/TCP
+    volumes:
+      - questdb-data:/var/lib/questdb
+    restart: unless-stopped
+
+volumes:
+  questdb-data:

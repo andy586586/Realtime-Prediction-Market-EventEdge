@@ -33,6 +33,7 @@ It includes:
 - Python live/offline collectors for Polymarket, Kalshi-style orderbooks, and GDELT news
 - Bayesian fair-value updates from news intensity/sentiment
 - q/kdb+ tick-store schema and analytics queries
+- A parallel, open-source QuestDB backend with equivalent SQL analytics
 - C++17 order book simulator/backtester with fills, inventory, fees, settlement, and PnL
 - Offline demo mode that runs without API keys or kdb+
 
@@ -78,6 +79,38 @@ Connect a q session to port 5011 and run `latestEdges[]` or
 `candidateTrades[0.025;0.06]`. `q/eod.q` supplies the persistence boundary for a
 date-partitioned historical database. The q runtime is not bundled with the repo.
 
+## Runnable open-source path: QuestDB
+
+The q implementation remains intact. QuestDB provides a parallel backend that
+can be started locally with Docker and queried through SQL. Python publishes the
+same quote and fair-value events using ILP/HTTP; QuestDB supplies WAL-backed,
+time-partitioned storage and live/historical queries in one process.
+
+```text
+CSV or live feed -> Python ILP publisher -> QuestDB -> SQL analytics
+                                             |
+                                             +-> C++ engine/backtest inputs
+```
+
+Run the complete demo:
+
+```bash
+python -m python.eventedge.generate_demo_data
+python -m python.eventedge.build_fair_values --offline
+./scripts/run_questdb_demo.sh
+```
+
+The QuestDB web console is then available at `http://localhost:9000`. Equivalent
+latest-value, ASOF-join, candidate-edge, and one-minute-bar queries are in
+`questdb/analytics.sql`. Stop the database with `docker compose down`; add `-v`
+only when you intentionally want to delete the persisted demo volume.
+
+Run the publisher unit tests without Docker:
+
+```bash
+python3 -m unittest tests/test_questdb_replay.py
+```
+
 ## Optional: live-ish public data fetch
 
 This project has conservative API clients. They are meant as integration starting points, not production execution code.
@@ -99,6 +132,7 @@ python/eventedge/
   build_fair_values.py    # Produces model fair values
   export_for_cpp.py       # Creates C++ input CSVs
   live_snapshot.py        # Public API snapshot helper
+  questdb_replay.py       # ILP/HTTP publisher for the open-source backend
 cpp/
   main.cpp
   csv.hpp/csv.cpp
@@ -113,9 +147,13 @@ q/
   rdb.q                  # Intraday subscriber and live queries
   replay.q               # CSV feed replay
   eod.q                  # HDB persistence boundary
+questdb/
+  analytics.sql          # SQL equivalents of the q analytics
 tests/
   test_event_engine.cpp
+  test_questdb_replay.py
 scripts/
   build_cpp.sh
+  run_questdb_demo.sh
+docker-compose.yml        # Local QuestDB service and persistent volume
 ```
-
